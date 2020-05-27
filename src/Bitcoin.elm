@@ -7,6 +7,11 @@ import Http
 import Json.Decode exposing (Decoder, at, string)
 
 
+{-| Use component
+
+@docs main
+
+-}
 type Model
     = Loading
     | Failure
@@ -17,11 +22,15 @@ type Msg
     = GotResult (Result Http.Error String)
 
 
+{-| API Endpoint
+-}
 api : String
 api =
     "https://www.bw.com/exchange/config/controller/website/pricecontroller/getassistprice"
 
 
+{-| Bitcoin price HTTP Request
+-}
 getPrice : Cmd Msg
 getPrice =
     Http.get
@@ -30,16 +39,22 @@ getPrice =
         }
 
 
+{-| JSON parse
+-}
 decodeContent : Decoder String
 decodeContent =
     at [ "datas", "usd", "btc" ] string
 
 
+{-| Сomponent initialization
+-}
 init : () -> ( Model, Cmd Msg )
 init _ =
     ( Loading, getPrice )
 
 
+{-| Component display
+-}
 view : Model -> Html Msg
 view model =
     Html.div [ class "bitcoin-usd-price-component" ]
@@ -55,6 +70,8 @@ view model =
         ]
 
 
+{-| Update state
+-}
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg _ =
     case msg of
@@ -67,6 +84,8 @@ update msg _ =
                     ( Failure, Cmd.none )
 
 
+{-| Main
+-}
 main : Program () Model Msg
 main =
     Browser.element
