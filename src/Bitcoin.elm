@@ -42,7 +42,7 @@ init _ =
 
 view : Model -> Html Msg
 view model =
-    Html.div [ class "bitcoin-price__block" ]
+    Html.div [ class "bitcoin-usd-price-component" ]
         [ case model of
             Loading ->
                 text "loading..."

@@ -11,5 +11,5 @@ import Html exposing (..)
 
 view : Html msg
 view =
-    Html.div [] [Bitcoin main]
+    Html.div [] [Bitcoin.main]
 ```
