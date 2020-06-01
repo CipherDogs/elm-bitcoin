@@ -3,7 +3,7 @@
     "name": "CipherDogs/elm-bitcoin",
     "summary": "Bitcoin web component made using Elm",
     "license": "GPL-3.0",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "exposed-modules": [
         "Bitcoin"
     ],

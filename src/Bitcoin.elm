@@ -12,8 +12,6 @@ Use component
 @docs update, Msg
 @docs view
 
-@docs api, getPrice, decodeContent
-
 -}
 
 import Html exposing (..)
@@ -22,12 +20,16 @@ import Http
 import Json.Decode exposing (Decoder, at, string)
 
 
+{-| State component
+-}
 type Model
     = Loading
     | Failure
     | Success String
 
 
+{-| Msg for HTTP Request
+-}
 type Msg
     = GotResult (Result Http.Error String)
 
