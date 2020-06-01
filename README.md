@@ -4,14 +4,28 @@ Bitcoin price web component made using Elm. Thanks to this extension, you can re
 ## Use
 
 ```elm
-module Example exposing (view)
+module Main exposing (main)
 
-import Bitcoin
+import Bitcoin exposing (Model, Msg(..), init, update)
+import Browser
 import Html exposing (..)
 
-view : Html msg
-view =
-    Html.div [] [ Bitcoin.main ]
+
+view : Model -> Html Msg
+view model =
+    Html.div []
+        [ Bitcoin.view model
+        ]
+
+
+main : Program () Model Msg
+main =
+    Browser.element
+        { init = init
+        , view = view
+        , update = update
+        , subscriptions = \_ -> Sub.none
+        }
 ```
 
 ## CSS
