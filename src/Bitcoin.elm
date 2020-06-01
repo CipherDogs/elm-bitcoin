@@ -1,4 +1,8 @@
-module Bitcoin exposing (..)
+module Bitcoin exposing
+    ( Model, init
+    , update, Msg(..)
+    , view
+    )
 
 {-| Bitcoin price web component made using Elm. Thanks to this extension, you can reflect in your application the current price of bitcoin in dollars.
 
