@@ -1,4 +1,4 @@
-module Bitcoin exposing (main)
+module Bitcoin exposing (..)
 
 {-| Bitcoin price web component made using Elm. Thanks to this extension, you can reflect in your application the current price of bitcoin in dollars.
 
@@ -8,7 +8,6 @@ Use component
 
 -}
 
-import Browser
 import Html exposing (..)
 import Html.Attributes exposing (class)
 import Http
@@ -85,15 +84,3 @@ update msg _ =
 
                 Err _ ->
                     ( Failure, Cmd.none )
-
-
-{-| Main
--}
-main : Program () Model Msg
-main =
-    Browser.element
-        { init = init
-        , update = update
-        , subscriptions = \_ -> Sub.none
-        , view = view
-        }
