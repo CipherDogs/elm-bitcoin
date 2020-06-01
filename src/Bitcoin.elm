@@ -4,7 +4,11 @@ module Bitcoin exposing (..)
 
 Use component
 
-@docs main
+@docs Model, init
+@docs update, Msg
+@docs view
+
+@docs api, getPrice, decodeContent
 
 -}
 
